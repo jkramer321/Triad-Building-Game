@@ -31,10 +31,10 @@ const triadMap = {
     "D Augmented":["D","F#","A#"],
 
     // D# Triads
-    "D# Major":["D#","F","A#"],
-    "D# Minor":["D#","Fb","A#"],
-    "D# Diminished":["D#","Fb","A"],
-    "D# Augmented":["D#","F","A##"],
+    "D# Major":["D#","F##","A#"],
+    "D# Minor":["D#","F#","A#"],
+    "D# Diminished":["D#","F#","A"],
+    "D# Augmented":["D#","F##","A##"],
 
     //Eb Triads
     "Eb Major":["Eb","G","Bb"],

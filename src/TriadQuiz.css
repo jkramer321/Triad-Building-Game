@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .buttons {
@@ -17,4 +18,6 @@
 
 .input {
     margin: 4px 2px;
+    padding: 15px 32px;
+    text-align: center;
 }
