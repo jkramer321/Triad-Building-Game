@@ -105,12 +105,12 @@ return(
                 Start Quiz
             </button>
         ):(
-            <div class="form-group">
+            <div className="form-group">
                 <h2 className ="triad">Spell The Following Triad: {currTriad}</h2>
                 <input className="input"
                     value={userAnswer} 
                     onChange={(e) => setUserAnswer(e.target.value)}
-                    placeholder="Enter triad notes here sparated by commas"
+                    placeholder="Enter triad notes here separated by commas"
                 />
                 <br/>
                 <button className="buttons"onClick={checkAnswer}>Submit</button>
