@@ -15,7 +15,9 @@ const TriadQuiz = () => {
         Minor: true,
         Diminished: true,
         Augmented: true,
-    })
+    });
+    //State for selected root note
+    const [selectedNote, setSelectedNote] = useState("All Notes");
 
     /**
      * Function to toggle triad types
@@ -31,13 +33,16 @@ const TriadQuiz = () => {
 
     /**
      * Function that starts the quiz
+     * 
+     * @returns {void}
      */
     const startQuiz = () => {
         //creaing an array of triads
         const triads = Object.keys(triadMap).filter((triad) =>{
-            //filtering the triads based on seleced triad types
-            const triadType = triad.split(" ")[1];
-            return triadTypes[triadType];
+            const [rootNote, triadType] = triad.split(" ");
+            const typeMatches = triadTypes[triadType];
+            const noteMatches = selectedNote === "All Notes" || rootNote === selectedNote;
+            return typeMatches && noteMatches;
         })
 
         //checking if there are no triads
@@ -56,9 +61,10 @@ const TriadQuiz = () => {
     };
 
     /**
+     * Check the user answer
      * 
+     * @returns {void}
      */
-    //checking the answer function
     const checkAnswer = () => {
         //ensure it is a correct triad
         if(!currTriad) return;
@@ -87,6 +93,38 @@ const TriadQuiz = () => {
 return(
     <div>
         <h1 className="header">Learn Triads!</h1>
+        {/* Dropdown for selecting the root note */}
+        <div className="note-selector">
+            <label htmlFor="note-select">
+                Select a Root Note:
+            </label>
+            <select
+                id="note-select"
+                value={selectedNote}
+                onChange={(e) => setSelectedNote(e.target.value)}
+            >
+                <option value="All Notes">All Notes</option>
+                <option value="C">C</option>
+                <option value="C#">C#</option>
+                <option value="Db">Db</option>
+                <option value="D">D</option>
+                <option value="D#">D#</option>
+                <option value="Eb">Eb</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="F#">F#</option>
+                <option value="Gb">Gb</option>
+                <option value="G">G</option>
+                <option value="G#">G#</option>
+                <option value="Ab">Ab</option>
+                <option value="A">A</option>
+                <option value="A#">A#</option>
+                <option value="Bb">Bb</option>
+                <option value="B">B</option>
+                <option value="B#">B#</option>
+            </select>
+        </div>
+
         <div className ="filterButtons">
             {[ "Major", "Minor", "Diminished", "Augmented"].map((triadType) => (
                 <button
