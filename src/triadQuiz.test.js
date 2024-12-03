@@ -119,4 +119,39 @@ describe("TriadQuiz Component", () => {
         //checking if the feedback is incorrect
         expect(screen.getByText(/Incorrect. The correct answer is/)).toBeInTheDocument();
     });
+
+    // Test Case 8 for checking if the next question button works
+    test("displays the next question correctly", () =>{
+        //render the component
+        render(<TriadQuiz/>);
+    
+        //starting the quiz
+        fireEvent.click(screen.getByText(/Start Quiz/));
+
+        // Ensure the selected triad is "C Major"
+        const triadText = screen.getByText(/Spell The Following Triad:/);
+        expect(triadText).toHaveTextContent("C Major");
+
+        //inputting the correct answer
+        fireEvent.change(screen.getByPlaceholderText(/Enter triad notes here separated by commas/),
+            {target: {value: "C, E, G"},
+        });
+
+        //submitting the answer
+        fireEvent.click(screen.getByText(/Submit/));
+
+        //checking if the feedback is correct
+        expect(screen.getByText("Correct!")).toBeInTheDocument();
+
+        //clicking the next question button
+        fireEvent.click(screen.getByText(/Next Question/));
+
+        //checking if the feedback is empty
+        expect(screen.queryByText("Correct!")).toBeNull();
+
+        //checking if the triad text is displayed
+        expect(screen.getByText(/Spell The Following Triad:/)).toBeInTheDocument();
+
+    });
+    
 });
