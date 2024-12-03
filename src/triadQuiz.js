@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import triadMap from "./TriadMap";
-import "./TriadQuiz.css";
+import "./triadQuiz.css";
 
 /**
  * Function that creates a triad quiz
@@ -85,7 +85,7 @@ const TriadQuiz = () => {
 
 return(
     <div>
-        <h1 className="header">Triad Quiz</h1>
+        <h1 className="header">Learn Triads!</h1>
         <div className ="filterButtons">
             {[ "Major", "Minor", "Diminished", "Augmented"].map((triadType) => (
                 <button
@@ -105,7 +105,7 @@ return(
             </button>
         ):(
             <div class="form-group">
-                <h2 className ="triad">Current Triad: {currTriad}</h2>
+                <h2 className ="triad">Spell The Following Triad: {currTriad}</h2>
                 <input className="input"
                     value={userAnswer} 
                     onChange={(e) => setUserAnswer(e.target.value)}
@@ -114,7 +114,9 @@ return(
                 <br/>
                 <button className="buttons"onClick={checkAnswer}>Submit</button>
                 <button className="buttons" onClick={startQuiz}>Next Question</button>
-                <p>{feedback}</p>
+                <p className="feedbackText">
+                    {feedback}
+                </p>
             </div>
         )}
     </div>
