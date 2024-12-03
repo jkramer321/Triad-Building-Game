@@ -12,7 +12,7 @@ body{
     position: relative;
 }
 
-.header, .triad, .buttons, .startButton, .filterButtons, .filter-button, .input, .feedbackText {
+.header, .triad, .buttons, .startButton, .filterButtons, .filter-button, .input, .feedbackText, .note-selector, .select {
     font-family: sans-serif;
     color: #464444;
 }
@@ -96,5 +96,19 @@ body{
     font-size: 16px;
     width: 30%; 
     border-radius: 5px;
+    border-color: #464444;
+}
+
+.note-selector{
+    margin: 10px 0px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.note-selector select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 10px;
     border-color: #464444;
 }

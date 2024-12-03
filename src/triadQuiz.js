@@ -99,6 +99,7 @@ return(
                 Select a Root Note:
             </label>
             <select
+                className="select"
                 id="note-select"
                 value={selectedNote}
                 onChange={(e) => setSelectedNote(e.target.value)}

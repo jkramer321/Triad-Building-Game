@@ -153,5 +153,28 @@ describe("TriadQuiz Component", () => {
         expect(screen.getByText(/Spell The Following Triad:/)).toBeInTheDocument();
 
     });
-    
+
+    // Test Case 9 for checking the note selector works properly
+    test("displays the correct triad based on the selected note", ()=>{
+        //render the component
+        render(<TriadQuiz/>);
+
+        //making sure the note selector is rendered
+        const noteSelector = screen.getByLabelText(/Select a Root Note/);
+        expect(noteSelector).toBeInTheDocument();
+
+        //verifying the default value of All Notes
+        expect(noteSelector).toHaveValue("All Notes");
+
+        //changing the selected note to C
+        fireEvent.change(noteSelector, {target: {value: "C"}});
+        expect(noteSelector).toHaveValue("C");
+
+        //starting the quiz
+        fireEvent.click(screen.getByText(/Start Quiz/));
+
+        //check that the triad starts with C
+        const triadText = screen.getByText(/Spell The Following Triad:/);
+        expect(triadText).toHaveTextContent(/C/);
+    })
 });
