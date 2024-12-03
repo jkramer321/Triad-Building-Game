@@ -56,17 +56,20 @@ const TriadQuiz = () => {
 
 return(
     <div>
-        <h1>Triad Quiz</h1>
+        <h1 className="header">Triad Quiz</h1>
         {!currTriad ?(
-            <button onClick={startQuiz}>Start Quiz</button>
+            <button className="startButton" onClick={startQuiz}>
+                Start Quiz
+            </button>
         ):(
-            <div>
-                <h2>Current Triad: {currTriad}</h2>
+            <div class="form-group">
+                <h2 className ="triad">Current Triad: {currTriad}</h2>
                 <input className="input"
                     value={userAnswer} 
                     onChange={(e) => setUserAnswer(e.target.value)}
                     placeholder="Enter triad notes here sparated by commas"
                 />
+                <br/>
                 <button className="buttons"onClick={checkAnswer}>Submit</button>
                 <button className="buttons" onClick={startQuiz}>Next Question</button>
                 <p>{feedback}</p>
