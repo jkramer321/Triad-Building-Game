@@ -1,5 +1,5 @@
 # Description of Triad Game
-This is an app to help learn different musical triads. You are able to select which triad(s) you would like to learn. This game accepts inversions so make sure to try them!
+I am currently trying to learn triads and created this app to help learn different musical triads. You are able to select which triad(s) you would like to learn. This game accepts inversions so make sure to try them!
 
 ### `npm start`
 
