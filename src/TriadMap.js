@@ -1,4 +1,8 @@
-//creating a map of triads to their respective notes 
+/**
+ * This file contains a map of all the triads in the chromatic scale.
+ * The triads are stored as key-value pairs where the key is the name of the triad
+ * and the value is an array of the notes in the triad.
+ */
 const triadMap = {
     //Cb Triads
     "Cb Major": ["Cb", "Eb", "Gb"],
@@ -109,10 +113,10 @@ const triadMap = {
     "B Augmented":["B","D#","F##"],
 
     // B# Triads
-    "B# Major":["B#","D","F"],
-    "B# Minor":["B#","D#","F#"],
+    "B# Major":["B#","D##","F##"],
+    "B# Minor":["B#","D#","F##"],
     "B# Diminished":["B#","D#","F#"],
-    "B# Augmented":["B#","D","F#"],
+    "B# Augmented":["B#","D##","F###"],
 
 
 };
