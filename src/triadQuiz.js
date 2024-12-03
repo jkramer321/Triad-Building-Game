@@ -10,13 +10,42 @@ const TriadQuiz = () => {
     const [currTriad, setCurrTriad] = useState(null);
     const[userAnswer, setUserAnswer] = useState("");
     const [feedback, setFeedback] = useState("");
+    const [triadTypes, setTriadTypes] = useState({
+        Major: true,
+        Minor: true,
+        Diminished: true,
+        Augmented: true,
+    })
+
+    /**
+     * Function to toggle triad types
+     * 
+     * @param {string} triadType
+     */
+    const toggleTriadType = (triadType) =>{
+        setTriadTypes((prev) => ({
+            ...prev,
+            [triadType]: !prev[triadType],
+        }));
+    };
 
     /**
      * Function that starts the quiz
      */
     const startQuiz = () => {
         //creaing an array of triads
-        const triads = Object.keys(triadMap);
+        const triads = Object.keys(triadMap).filter((triad) =>{
+            //filtering the triads based on seleced triad types
+            const triadType = triad.split(" ")[1];
+            return triadTypes[triadType];
+        })
+
+        //checking if there are no triads
+        if(triads.length === 0){
+            //sending an alert to the user
+            alert("Please select at least one triad type");
+            return;
+        }
         //getting random triad
         const randomTriad = triads[Math.floor(Math.random() * triads.length)];
         //setting the current triad
@@ -57,6 +86,19 @@ const TriadQuiz = () => {
 return(
     <div>
         <h1 className="header">Triad Quiz</h1>
+        <div className ="filterButtons">
+            {[ "Major", "Minor", "Diminished", "Augmented"].map((triadType) => (
+                <button
+                    key = {triadType}
+                    className = {`filter-button ${
+                        triadTypes[triadType] ? "active" : "inactive"
+                    }`}
+                    onClick = {() => toggleTriadType(triadType)}
+                    >
+                        {triadType}{triadTypes[triadType] ? "✓" : ""}
+                    </button>
+            ))}
+        </div>
         {!currTriad ?(
             <button className="startButton" onClick={startQuiz}>
                 Start Quiz
