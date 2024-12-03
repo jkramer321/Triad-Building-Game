@@ -70,10 +70,11 @@ const TriadQuiz = () => {
         //checking if the user answer is correct
        const isCorrect=
             //checking if the user answer is correct
-            userInput.every(
-                (note, index) => 
-                note.toLowerCase() === correctAnswer[index].toLowerCase()
-            );
+            userInput
+                .map((note) => note.toLowerCase())
+                .sort()
+                .every((note, index) => note === correctAnswer.map((n) => n.toLowerCase()).sort()[index]);
+
         //checking if the user answer is correct ingores captilization for answer
         if(isCorrect){
             setFeedback("Correct!");
