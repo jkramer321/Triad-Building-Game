@@ -1,5 +1,21 @@
-# Description of Triad Game
-I am currently trying to learn triads and created this app to help learn different musical triads. You are able to select which triad(s) you would like to learn. This game accepts inversions so make sure to try them!
+# Triad Game
+
+## Description
+The Triad Game is a web application designed to help you learn and practice musical triads interactively. Whether you're a beginner musician or just looking to sharpen your understanding of chord structures, this app provides a fun way to quiz yourself on major, minor, diminished, and augmented triads.
+
+## Key Features:
+- **Select Specific Triads**: Choose which types of triads (Major, Minor, Diminished, Augmented) you'd like to practice.
+- **Root Note Filtering**: Focus on triads starting from a specific note (e.g., only C triads or all notes).
+- **Inversion Support**: Answers are accepted in any inversion, as long as they contain the correct notes.
+- **Interactive Feedback**: Receive instant feedback on your answers to track your progress.
+
+## Installation
+To get started with the project locally, clone the repository and install dependencies:
+git clone https://github.com/jkramer321/Triad-Building-Game.git
+cd Triad-Building-Game
+npm install
+
+## Usage
 
 ### `npm start`
 
@@ -27,9 +43,21 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
+⚠️ Note: This is irreversible—only eject if absolutely necessary.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to Play
+1. Open the app in your browser.
+2. Use the **Root Note Selector** to choose a specific note or leave it set to "All Notes."
+3. Use the **Triad Filters** to enable or disable specific triad types (e.g., Major, Minor).
+4. Click **Start Quiz** to begin.
+5. Enter your answer in the text box using notes separated by commas (e.g., C, E, G)
+6. Submit your answer to receive feedback.
+7. Click Next Question to practice a new triad.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##Technology Stack
+- **Frontend**: React.js
+- **Styling**: CSS
+- **Testing**: Jest with React Testing Library
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
