@@ -3,6 +3,9 @@
 ## Description
 The Triad Game is a web application designed to help you learn and practice musical triads interactively. Whether you're a beginner musician or just looking to sharpen your understanding of chord structures, this app provides a fun way to quiz yourself on major, minor, diminished, and augmented triads.
 
+## How It Works
+The app uses a hashmap to store and retrieve musical triads efficiently. Each triad is represented as a key-value pair, where the key is the name of the triad (e.g., "C Major") and the value is an array of its notes (e.g., ["C", "E", "G"]). This structure allows for quick access to triads, supports filtering by type or root note, and ensures accurate validation of user answers.
+
 ## Key Features:
 - **Select Specific Triads**: Choose which types of triads (Major, Minor, Diminished, Augmented) you'd like to practice.
 - **Root Note Filtering**: Focus on triads starting from a specific note (e.g., only C triads or all notes).
@@ -57,6 +60,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ##Technology Stack
 - **Frontend**: React.js
 - **Styling**: CSS
+- **Hashmap**: Used to store and manage triads for efficient access.
 - **Testing**: Jest with React Testing Library
 
 ## License
