@@ -1,11 +1,28 @@
 import React, { useState } from "react";
 import triadMap from "./TriadMap";
 import "./triadQuiz.css";
+import Modal from "./Modal";
 
 /**
  * Function that creates a triad quiz
  */
 const TriadQuiz = () => {
+
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const handleNextQuestionClick = () => {
+        setIsModalVisible(true);
+    }
+
+    const handleConfirm = () => {
+        setIsModalVisible(false);
+    }
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    }
+
+
     //intializing state
     const [currTriad, setCurrTriad] = useState(null);
     const[userAnswer, setUserAnswer] = useState("");
@@ -74,7 +91,7 @@ const TriadQuiz = () => {
         const userInput = userAnswer.split(",").map((note) => note.trim());
 
         //checking if the user answer is correct
-       const isCorrect=
+        const isCorrect=
             //checking if the user answer is correct
             userInput
                 .map((note) => note.toLowerCase())
@@ -153,7 +170,12 @@ return(
                 />
                 <br/>
                 <button className="buttons"onClick={checkAnswer}>Submit</button>
-                <button className="buttons" onClick={startQuiz}>Next Question</button>
+                <button className="buttons" onClick={handleNextQuestionClick}>Next Question</button>
+                <Modal
+                    isVisable={isModalVisible}
+                    onConfirm={handleConfirm}
+                    onCancel={handleCancel}
+                />
                 <p className="feedbackText">
                     {feedback}
                 </p>
