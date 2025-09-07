@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import triadMap from "./TriadMap";
-import "./triadQuiz.css";
+import triadMap from "./constants/TriadMap";
+import "./styles/triadQuiz.css";
 import Modal from "./Modal";
 
 /**

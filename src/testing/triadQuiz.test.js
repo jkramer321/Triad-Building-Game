@@ -1,6 +1,6 @@
 import React from "react";
 import {render, screen, fireEvent} from "@testing-library/react";
-import TriadQuiz from './triadQuiz';
+import TriadQuiz from '../triadQuiz';
 
 // Mock window.alert
 global.alert = jest.fn();
